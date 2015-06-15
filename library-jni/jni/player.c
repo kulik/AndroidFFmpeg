@@ -56,8 +56,8 @@
 #include "aes-protocol.h"
 #include "sync.h"
 
-#define FFMPEG_LOG_LEVEL AV_LOG_WARNING
-#define LOG_LEVEL 2
+#define FFMPEG_LOG_LEVEL AV_LOG_DEBUG
+#define LOG_LEVEL 10
 #define LOG_TAG "player.c"
 #define LOGI(level, ...) if (level <= LOG_LEVEL) {__android_log_print(ANDROID_LOG_INFO, LOG_TAG, __VA_ARGS__);}
 #define LOGE(level, ...) if (level <= LOG_LEVEL + 10) {__android_log_print(ANDROID_LOG_ERROR, LOG_TAG, __VA_ARGS__);}
@@ -2364,12 +2364,14 @@ int player_set_data_source(struct State *state, const char *file_path,
 	if ((player->video_stream_no = player_find_stream(player,
 			AVMEDIA_TYPE_VIDEO, video_stream_no)) < 0) {
 		err = player->video_stream_no;
+		LOGW(3, "player_set_data_source, Can not find video stream");
 		goto error;
 	}
 
 	if ((player->audio_stream_no = player_find_stream(player,
 			AVMEDIA_TYPE_AUDIO, audio_stream_no)) < 0) {
 		err = player->audio_stream_no;
+		LOGW(3, "player_set_data_source, Can not find audio stream");
 		goto error;
 	}
 #ifdef SUBTITLES
