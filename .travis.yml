@@ -20,11 +20,8 @@ before_install:
   - export PATH=${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools:${ANDROID_NDK_HOME}
   - echo yes | android update sdk -a -t tools,platform-tools,extra-android-support,extra-android-m2repository,android-19,build-tools-19.0.1,extra-google-google_play_services,extra-google-m2repository --force --no-ui
 install:
-  - sh -c 'cd FFmpegLibrary/jni/ && svn checkout http://libyuv.googlecode.com/svn/trunk/ libyuv'
-  - sh -c 'cd FFmpegLibrary/jni/freetype2 && ./autogen.sh'
-  - sh -c 'cd FFmpegLibrary/jni/fribidi && autoreconf -ivf'
-  - sh -c 'cd FFmpegLibrary/jni/libass && autoreconf -ivf'
-  - sh -c 'cd FFmpegLibrary/jni/vo-aacenc && autoreconf -ivf'
-  - sh -c 'cd FFmpegLibrary/jni/vo-amrwbenc && autoreconf -ivf'
-  - sh -c 'cd FFmpegLibrary/jni && ./build_android.sh'
+  - sh -c 'cd library-jni/jni/ && ./fetch'
+  - sh -c 'cd library-jni/jni && ./build_android.sh'
+  - sh -c 'cd library-jni/jni && ndk-build'
+  - sh -c './gradlew build'
 
