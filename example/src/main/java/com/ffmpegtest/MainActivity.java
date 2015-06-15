@@ -31,7 +31,7 @@ public class MainActivity extends Activity implements OnItemClickListener {
 		cursor.addRow(new Object[] {
 				1,
 				"Kings Of Leon-Charmer unencrypted",
-				getSDCardFile("airbender/videos/Videoguides-Riga_SIL_engrus_1500.mp4"),
+				getSDCardFile("hikvision.mp4"),
 				null });
 		cursor.addRow(new Object[] {
 				2,
@@ -41,12 +41,12 @@ public class MainActivity extends Activity implements OnItemClickListener {
 		cursor.addRow(new Object[] {
 				3,
 				"Apple sample",
-				"http://devimages.apple.com.edgekey.net/resources/http-streaming/examples/bipbop_4x3/bipbop_4x3_variant.m3u8",
+				"https://raw.githubusercontent.com/jbochi/hls-loop/master/static/bipbop_4x3/bipbop_4x3_variant.m3u8",
 				null });
 		cursor.addRow(new Object[] {
 				4,
 				"Apple advenced sample",
-				"https://devimages.apple.com.edgekey.net/resources/http-streaming/examples/bipbop_16x9/bipbop_16x9_variant.m3u8",
+				"https://raw.githubusercontent.com/victusfate/iFrameTestRepo/master/public/examples/bipbop_16x9_variant.m3u8",
 				null });
 		cursor.addRow(new Object[] {
 				5,
@@ -98,6 +98,11 @@ public class MainActivity extends Activity implements OnItemClickListener {
 				"ThreeMenInABoatToSayNothingOfTheDog_RUS_eng_1500.mp4.enc",
 				getSDCardFile("airbender/videos/ThreeMenInABoatToSayNothingOfTheDog_RUS_eng_1500.mp4.enc"),
 				"fNFyiU34+Pw4iU6QqazxUZ/+pUMWXQTq" });
+		cursor.addRow(new Object[] {
+				14,
+				"Simpson",
+				getSDCardFile("simpson.mp4"),
+				null });
 		mAdapter = new MainAdapter(this);
 		mAdapter.swapCursor(cursor);
 
