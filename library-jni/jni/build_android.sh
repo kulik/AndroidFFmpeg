@@ -372,17 +372,17 @@ ARCH=x86
 OPTIMIZE_CFLAGS="-m32"
 PREFIX=../ffmpeg-build/x86
 OUT_LIBRARY=$PREFIX/libffmpeg.so
-ADDITIONAL_CONFIGURE_FLAG=
+ADDITIONAL_CONFIGURE_FLAG=--disable-asm
 SONAME=libffmpeg.so
 PREBUILT=$NDK/toolchains/x86-4.4.3/prebuilt/$OS_ARCH
 PLATFORM_VERSION=android-9
-#build_amr
-#build_aac
-#build_fribidi
-#build_freetype2
-#build_ass
-#build_ffmpeg
-#build_one
+build_amr
+build_aac
+build_fribidi
+build_freetype2
+build_ass
+build_ffmpeg
+build_one
 
 #mips
 EABIARCH=mipsel-linux-android
