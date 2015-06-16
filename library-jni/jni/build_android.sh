@@ -376,13 +376,13 @@ ADDITIONAL_CONFIGURE_FLAG=
 SONAME=libffmpeg.so
 PREBUILT=$NDK/toolchains/x86-4.4.3/prebuilt/$OS_ARCH
 PLATFORM_VERSION=android-9
-build_amr
-build_aac
-build_fribidi
-build_freetype2
-build_ass
-build_ffmpeg
-build_one
+#build_amr
+#build_aac
+#build_fribidi
+#build_freetype2
+#build_ass
+#build_ffmpeg
+#build_one
 
 #mips
 EABIARCH=mipsel-linux-android
